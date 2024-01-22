@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .payment-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            width: 350px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            color: #333;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #success-message {
+            display: none;
+            color: #4caf50;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="payment-container">
+    <h2>Оплата</h2>
+
+    <!-- Payment Form -->
+    <form id="payment-form" class="form-group">
+        <div>
+            <label for="card-number">Номер карты:</label>
+            <input type="text" id="card-number" name="card-number" placeholder="Введите номер карты" required>
+        </div>
+        <div>
+            <label for="expiration-date">Срок действия:</label>
+            <input type="text" id="expiration-date" name="expiration-date" placeholder="ММ/ГГ" required>
+        </div>
+        <div>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+        </div>
+        <button type="button" onclick="processPayment()">Оплатить</button>
+    </form>
+
+    <!-- Success Message -->
+    <div id="success-message">Оплата успешно выполнена!</div>
+</div>
+
+</body>
+</html>
